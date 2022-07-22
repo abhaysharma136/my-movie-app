@@ -74,9 +74,11 @@ function EditMovieForm({movie}){
           variant="standard"
           onChange={(event) => setTrailer(event.target.value)} />
         <Button
-          variant="outlined" color="success"
+        type="submit"
+          variant="outlined"
+           color="success"
           onClick={() => {
-            fetch(`${API}/movies/${movie.id}`,{
+            fetch(`${API}/movies/${movie._id}`,{
               method:"PUT",
               body:JSON.stringify(newmovie),
               headers:{
