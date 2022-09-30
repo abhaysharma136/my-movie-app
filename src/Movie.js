@@ -19,7 +19,7 @@ export function Movie({ movie, id,deleteButton,EditButton }) {
   // }
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="container-top">
       <Card>
         <div className="movie-details">
           <img

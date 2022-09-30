@@ -1,22 +1,28 @@
 .color-box {
   margin: auto;
 }
-.text-bar{
+
+.text-bar {
   width: 260px;
   height: 50px;
 }
-.color-button{
+
+.color-button {
   width: 40px;
   height: 56px;
 }
-.color-container{
+
+.color-container {
   padding-top: 20px;
 }
+
 .movie-details {
   width: 400px;
   text-align: center;
 }
-
+.container-top{
+  margin-top: 30px;
+}
 .movie-poster {
   width: 400px;
   height: 600px;
