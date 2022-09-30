@@ -25,7 +25,7 @@ export function MovieDetails() {
 
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="movie-details-container">
       <iframe
         width="100%"
         height="550"
@@ -33,7 +33,7 @@ export function MovieDetails() {
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowfullscreen="true"
       ></iframe>
       <div className="movie-details-container">
         <div className="movie-specs">

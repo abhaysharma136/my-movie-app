@@ -21,8 +21,8 @@ export function AddColor() {
 function ColorBox({ color }) {
 
   const colorBoxStyles = {
-    width: "210px",
-    height: "30px",
+    width: "310px",
+    height: "50px",
     backgroundColor: color,
     marginTop: "5px",
   };
