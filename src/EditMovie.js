@@ -3,6 +3,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useNavigate,useParams } from "react-router-dom";
 import { API } from "./global.js";
+import CircularProgress from '@mui/material/CircularProgress';
 
 export function EditMovie() {
  
@@ -20,7 +21,7 @@ export function EditMovie() {
   
   return (
     <div>
-      {movie?<EditMovieForm movie={movie}/>:"...Loading"}
+      {movie?<EditMovieForm movie={movie}/>:<CircularProgress/>}
     </div>
   );
 }
