@@ -54,10 +54,10 @@
   text-align: center;
 }
 
-.like-dislike {
+/* .like-dislike {
   text-align: left;
   margin-left: 15px;
-}
+} */
 
 .image-404 {
   width: 100%;
@@ -75,4 +75,13 @@
   background-position: center;
   padding: 0px;
   background-size: cover;
+}
+.movie-summary{
+  height: 200px;
+}
+.movie-buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
