@@ -119,7 +119,7 @@ function App() {
       <AppBar position="static">
       <Toolbar>
           <Button color="inherit" onClick={() => navigate("/")}>Home</Button>
-          <Button color="inherit" onClick={() => navigate("/color-game")}>COlor Game</Button>
+          {/* <Button color="inherit" onClick={() => navigate("/color-game")}>COlor Game</Button> */}
           <Button color="inherit" onClick={() => navigate("/movies")}>Movies</Button>
           <Button color="inherit" onClick={() => navigate("/add-movie")}>Add Movies</Button>
           <Button style={{marginLeft:"auto"}} color="inherit" onClick={()=>setMode(mode==="light"?"dark":"light")} startIcon={mode==="light"?<Brightness4Icon/>:<Brightness7Icon/>}>{mode==="light"?"dark":"light"}mode</Button>
