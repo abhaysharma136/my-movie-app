@@ -18,6 +18,7 @@ export function Movie({ movie, id, deleteButton, EditButton }) {
   //   display:show?'block':"none",
   // }
   const navigate = useNavigate();
+  const { actors } = movie;
   return (
     <div className="container-top">
       <Card>
@@ -35,7 +36,14 @@ export function Movie({ movie, id, deleteButton, EditButton }) {
                   <InfoIcon onClick={() => navigate(`/movies${id}`)} />
                 </IconButton>
               </h3>
+              <p>{movie.year}</p>
               <p style={styles}>{movie.rating}⭐</p>
+            </div>
+            <div>
+              <h3>
+                Actors: {actors?.map((actor) => actor.actorName).join(", ")}
+              </h3>
+              <h3>{movie.producer}</h3>
             </div>
             {show ? <p className="movie-summary">{movie.summary}</p> : null}
             <div className="like-dislike">
