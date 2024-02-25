@@ -22,6 +22,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { EditMovie } from "./EditMovie";
 import {BasicForm} from "./BasicForm";
+import Dummy from "./Dummy";
 
 function App() {
   // var InitialMovieList = [
@@ -129,6 +130,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/color-game" element={<AddColor />} />
+        <Route path="/dummy" element={<Dummy />} />
         <Route
           path="/movies"
           element={

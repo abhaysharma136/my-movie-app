@@ -18,7 +18,7 @@ export function Movie({ movie, id, deleteButton, EditButton }) {
   //   display:show?'block':"none",
   // }
   const navigate = useNavigate();
-  const { actors } = movie;
+  const { actors, producers } = movie;
   return (
     <div className="container-top">
       <Card>
@@ -32,18 +32,21 @@ export function Movie({ movie, id, deleteButton, EditButton }) {
             <div className="movie-specs">
               <h3>
                 {movie.name}
-                <IconButton aria-label="info" color="primary">
-                  <InfoIcon onClick={() => navigate(`/movies${id}`)} />
+                <IconButton
+                  aria-label="info"
+                  color="primary"
+                  onClick={() => navigate(`/movies${id}`)}
+                >
+                  <InfoIcon />
                 </IconButton>
               </h3>
               <p>{movie.year}</p>
               <p style={styles}>{movie.rating}⭐</p>
             </div>
             <div>
-              <h3>
-                Actors: {actors?.map((actor) => actor.actorName).join(", ")}
-              </h3>
-              <h3>{movie.producer}</h3>
+              <h3>Actors: {actors?.map((actor) => actor).join(", ")}</h3>
+              <h3>Producer: {producers?.map((actor) => actor).join(", ")}</h3>
+              {/* <h3>{movie.producer}</h3> */}
             </div>
             {show ? <p className="movie-summary">{movie.summary}</p> : null}
             <div className="like-dislike">

@@ -1,50 +1,70 @@
-import {
-  useNavigate,
-  useParams
-} from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Button from "@mui/material/Button";
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { useState,useEffect } from "react";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { useState, useEffect } from "react";
 import { API } from "./global.js";
 
 export function MovieDetails() {
-  
   const { id } = useParams();
   const [movie, setMovie] = useState({});
-  const styles = {
-    color: movie.rating >= 8 ? "green" : "red",
-  };
-  const getMovies=()=>{
-    const res=fetch(`${API}/movies/${id}`,{
-      method:"GET",
-    });
-    res.then((data)=>data.json()).then((mv)=>setMovie(mv));
-  }
-  useEffect(()=>getMovies(),[]);
 
+  const getMovies = () => {
+    const res = fetch(`${API}/movies/${id}`, {
+      method: "GET",
+    });
+    res.then((data) => data.json()).then((mv) => setMovie(mv));
+  };
+  useEffect(() => getMovies(), []);
 
   const navigate = useNavigate();
   return (
     <div className="movie-details-container">
-      <iframe
-        width="100%"
-        height="550"
-        src={movie.trailer}
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen="true"
-      ></iframe>
-      <div className="movie-details-container">
-        <div className="movie-specs">
-          <h2 className="movie-name">{movie.name}</h2>
-          <p style={styles} className="movie-rating">
-            {movie.rating}⭐
-          </p>
+      <h1 className="movie-details-heading">{movie?.name}</h1>
+      <h3 className="movie-details-heading">{movie?.year}</h3>
+      <div className="movie-details-inner-container1">
+        <img
+          src={movie?.poster}
+          alt={movie?.name}
+          className="movie-detail-poster"
+        />
+        <div className="movie-details-trailer">
+          <iframe
+            src={movie.trailer}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture"
+            allowFullScreen={true}
+          ></iframe>
         </div>
-        <p className="movie-summary">{movie.summary}</p>
       </div>
-      <Button onClick={() => navigate(-1)} variant="outlined" startIcon={<ArrowBackIosIcon />}>
+
+      <div>
+        <h3 className="movie-details-heading">{movie?.summary}</h3>
+        <div
+          style={{ display: "flex", gap: "5px" }}
+          className="movie-details-heading"
+        >
+          <h3>Actors </h3>
+          {movie?.producers?.map((ele, ind) => (
+            <h3 key={ind}>{ele}</h3>
+          ))}
+        </div>
+        <div
+          style={{ display: "flex", gap: "5px" }}
+          className="movie-details-heading"
+        >
+          <h3>Actors </h3>
+          {movie?.actors?.map((ele, ind) => (
+            <h3 key={ind}>{ele}</h3>
+          ))}
+        </div>
+      </div>
+
+      <Button
+        onClick={() => navigate(-1)}
+        variant="outlined"
+        startIcon={<ArrowBackIosIcon />}
+      >
         Back
       </Button>
     </div>

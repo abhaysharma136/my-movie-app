@@ -1,8 +1,11 @@
 export function Home() {
   return (
     <div className="Home-Page-container">
-      <h1>Welcome to my Home Page</h1>
-      <img src="https://c0.wallpaperflare.com/preview/240/448/1022/remote-control-screen-tv-thumbnail.jpg" alt="HomePage"></img>
+      <img
+        src="https://cdn.dribbble.com/userupload/4058178/file/original-32375ad0f4d0d27bbb5a236c95a90916.jpg?resize=1200x900"
+        alt="HomePage"
+        className="homepage-image"
+      ></img>
     </div>
   );
 }
